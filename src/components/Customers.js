@@ -6,7 +6,7 @@ import 'ag-grid-community/dist/styles/ag-theme-material.css';
 
 export default function Customers() {
     const [customers, setCustomers] = useState([]);
-    
+
 
     useEffect(() => {
         fetch('https://customerrest.herokuapp.com/api/customers')
@@ -16,25 +16,6 @@ export default function Customers() {
             })
             .catch(err => console.error(err))
     }, [])
-
-    /*const customerRows = customers.map((content) => 
-     <tr key={content.firstname}>
-         <td>{content.firstname}</td>
-         <td>{content.lastname}</td>
-     </tr>
-     )
- 
-     return (
-         <div>
-             <h2>DIPPA</h2>
-             <table>
-                 <tbody>
-                     <tr><th>LOL</th></tr>
-                     {customerRows}
-                 </tbody>
-             </table>
-         </div>
-     )*/
 
     const columns = [
         { headerName: 'Firstname', field: "firstname", sortable: true, filter: true, floatingFilter: true },
@@ -48,12 +29,12 @@ export default function Customers() {
 
     return (
         <div className="ag-theme-material"
-                style={{height: '700px', width: '100%', margin: 'auto'}} >
-      <h1>Customers</h1>
-      <AgGridReact
-            columnDefs={columns}
-            rowData={customers}
-            animateRows={true}
+            style={{ height: '700px', width: '80%', margin: 'auto'}} >
+            <h1>Customers</h1>
+            <AgGridReact
+                columnDefs={columns}
+                rowData={customers}
+                animateRows={true}
             >
             </AgGridReact>
         </div>

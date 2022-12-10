@@ -7,13 +7,13 @@ function App() {
   return (
     <div classname='App'>
       <BrowserRouter>
-      <Link to='/'>Customers</Link>{''}
-      <Link to='/trainings'>Trainings</Link>{''}
+        <Link to='/'>Customers</Link>{''}
+        <Link to='/trainings'>Trainings</Link>{''}
 
-      <Routes>
-        <Route path='/' element={<Customers />} />
-        <Route path='/trainings' element={<Trainings />} />
-      </Routes>
+        <Routes>
+          <Route path='/' element={<Customers />} />
+          <Route path='/trainings' element={<Trainings />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
